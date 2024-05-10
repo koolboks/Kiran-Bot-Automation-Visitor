@@ -2108,7 +2108,7 @@ async def main(update=None, bot=None):
 
             await page.goto("https://apply.immigration.govt.nz/visa_dashboard/")
 
-            with open("data_visitor.csv", "r") as csv_file:
+            with open("data.csv", "r") as csv_file:
                 reader = csv.reader(csv_file)
                 data = next(reader)
                 data = transform_data(list(reader))
