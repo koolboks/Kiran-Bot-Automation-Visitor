@@ -1,0 +1,362 @@
+Field Name,Description,Type,Field Value
+QvisaType, what visa are you applying for?, text(Student/visitor),Student
+signInName,Username,Text,sure12@@
+password,Password,Text,F-Uz5-!%Qs4Hi8u
+
+,,,
+,,,
+visitor visa,,
+VisaType,Selecting the visa type., text (Temporary/Resident),Temporary visa
+IsOutsideNZ,Determine if the applicant is outside New Zealand (Yes/No),text,yes
+OutsideNZVisaType,Select the visa type for applicants outside New Zealand ,text,Visitor
+IsAustralianPRorVisaWaiver,Determine if the applicant is a citizen or permanent resident of Australia or a citizen of a visa waiver country (Yes/No),text,No
+PurposeOfVisit,Determine the purpose of visit from the CSV data and select the corresponding option(covid-19", "tourism or holiday", "event", "professional", "family...),family
+VisitOption,Why you want to visit?(Make sure option is valid),text,To visit family or friends
+IsMononym,Do you have a mononym? (Yes/No),text,Yes
+UserName,Enter your name exactly as it appears in your passport.,text,Mr. John Doe
+GivenName,Enter your Given or first name exactly as it appears in your passport.,text,John
+MiddleName,Enter your Middle names exactly as they appear in your passport. Leave blank if no middle name is displayed in your passport.,text,James
+Surname,Enter your Surname or family name exactly as it appears in your passport.,text,Doe
+OtherNames,Do you have other names? (Yes/No),text,Yes
+OtherGivenName,Enter your Given or first name exactly as it appears in your passport.,text,John
+OtherMiddleName,Enter your Middle names exactly as they appear in your passport. Leave blank if no middle name is displayed in your passport.,text,James
+OtherSurname,Enter your Surname or family name exactly as it appears in your passport.,text,Doe
+NameType,name type , text,Birth
+
+,,,
+PreviousApplication,Have you previously applied for a New Zealand visa?,text,Yes
+ImmigrationCountry,What country or territory will you (the applicant) be in when this application is submitted?,text,Canada
+PreviousVisaNumber,Enter your previous New Zealand visa number,text,23456765
+PreviousNZETARequest,Have you previously requested an NZeTA (New Zealand Electronic Travel Authority)?,text,Yes
+nzeta_PreviousVisaNumber,Enter your previous NZeTA visa number,text,ABC123
+AustralianPRVisa,Do you hold an Australian Permanent Resident Visa?,text,Yes
+TraveledToNZ,Have you ever traveled to New Zealand?,text,Yes
+TraveledToNZ_Month,Month of travel to New Zealand,text,01
+TraveledToNZ_Year,Year of travel to New Zealand,text,2022
+TotalTimeInNZ,Will your total time in New Zealand for all visits including this proposed visit equal 24 months or more?,text,Yes
+
+,,,
+PassportNumber,Passport number,text,Yes
+Nationality,Nationality as shown in passport,text,Canada
+IssueCountry,Country or territory of issue,text,Canada
+ExpiryDate,Passport expiry date,text,02-04-2026
+IssueDate,Passport issue date,text,02-04-2023
+Gender,Sex as shown in passport,text,Male
+DateOfBirth,Date of birth as shown in passport,text,02-04-1993
+CountryOfBirth,CountryOfBirth,text,Canada
+StateProvinceRegionOfBirth,State or province or region of birth,text, Onatario
+CityOfBirth,CityOfBirth,text,Onatario
+
+
+
+OtherCitizenship,OtherCitizenship,text,No
+
+,,
+
+handlePoliceCertificates,Have you provided a police certificate from your country of nationality with a previous visa(yes/no),text,yes
+issue_date,issue_date,date,01-01-2022
+country_of_issue,country_of_issue,text,Canada
+
+,,,,,
+has_national_id,has_national_id,text(yes/no), yes
+national_id_number,national_id_number,number,1234567654
+CountryOfIssue,CountryOfIssue,text, Canada
+
+
+,,,
+CurrentCountry,CurrentCountry,text,Canada
+ContactAddress,ContactAddress,text, Onatario
+PostalSameAsPhysical,PostalSameAsPhysical,text,Yes
+EmailAddress,EmailAddress,text,example@example.com
+PhoneNumber,PhoneNumber,text,+321234567890
+AlternativePhoneNumber,AlternativePhoneNumber,text,+820987654321
+
+
+,,fourth_page,,
+
+membership_with_immigration_nz_tourism_partners,Membership with Immigration NZ Tourism Partners,boolean,Yes
+financial_support_during_stay,Financial Support during Stay,boolean,No
+prepaid_accommodation,Prepaid Accommodation,boolean,No
+available_funds,Available Funds,boolean,No
+onward_travel_evidence,Onward Travel Evidence,text,I have sufficient funds to purchase travel
+accommodation_address,accommodation_address,text,my newzalnd address
+
+
+,,,,
+Do_you_require_a_multiple_journey_visa,Do_you_require_a_multiple_journey_visa,text(yes/no),No
+MJV_arrival_date,arrival date,date,2025-01-01
+MJV_departure_date,departure date,date,2025-12-31
+Parental_permission,No one included in this application is under 16,text,No one included in this application is under 16
+
+
+
+
+,fift page,
+Conviction,Conviction,text(yes/no),yes
+Offence,Offence,text,i ma once convicted of not ok
+ConvictionDetails,convictionDetails,Yes of Course i sined
+UnderInvestigation,UnderInvestigation,text(yes/no),yes
+InvestigationDetails,InvestigationDetails,text,I am currently under investigation for unspecified reasons
+Expulsion,Expulsion,text(yes/no),yes
+ExpulsionDetails,expulsionDetails,text,ok i m not sure
+Refusal,Refusal,text(yes/no),yes
+RefusalCountry,RefusalCountry,text,United Kingdom
+VisaPermitType,VisaPermitType,text,Student Visa
+MonthOfRefusal,MonthOfRefusal,text,05
+YearOfRefusal,YearOfRefusal,text,2023
+Maximum_of_500_characters,Maximum_of_500_characters,text,I was refused entry due to incomplete documentation
+LivedInCountry,LivedInCountry,text(yes/no),yes
+CountryNameHere,CountryNameHere,text,Canada
+PoliceCertificateProvided,PoliceCertificateProvided,text(yes or no),yes
+PoliceCertificateLast24Months,PoliceCertificateLast24Months,text(yes or no),yes
+
+,sixth,,,
+,,,,,
+Tuberculosis,Do you have tuberculosis?,Yes/No,no
+TuberculosisDetails,Please provide more details on your result,text,i was sick with TB
+RenalDialysis,Have you had renal dialysis?,Yes/No,yes
+RenalDialysisDetails,Please provide more details on your renal dialysis,text,required details here
+HospitalCare,Have you received hospital care?,Yes/No,no
+HospitalCareDetails,Please provide more details on your hospital care,text,required details here
+ResidentialCare,Have you received residential care?,Yes/No,yes
+ResidentialCareDetails,Please provide more details on your residential care,text,required details here
+StayDuration,Duration of stay,Dropdown,1 month or less
+PreviousMedicalExamination,Previous medical examination?,Yes/No,no
+PreviousExamDetails,Please provide more details on your previous medical examination,text,required details here
+CurrentMedicalExamination,Current medical examination?,Yes/No,no
+CurrentExamDetails,Please provide more details on your current medical examination,text,required details here
+
+
+
+,,,,,,
+AreYouCurrentlyWorking, Are you currently working (Retired, yes, no), text,Retired
+StartDate, Your start date of working (mm/yyyy), date, 03/2019
+RoleOrJobTitle, Role or job title, text, Software Engineer
+CountryOfWork, Country of work, text, United States
+CountryOfOrganisation, Country of organisation, text, United States
+CompanyName, Company name, text, ABC Company
+EmployerPhoneNumber, Employer phone number, text, +1234567890
+EmployerEmailAddress, Employer email address, text, example@example.com
+HeadOfficeAddress, Head office address of organisation or employer, text, (Address Here)
+RetiredStartDate, Your start date of retirement (mm/yyyy), date, 05/2023
+RetiredEndDate, Your end date of retirement (mm/yyyy), date, 07/2023
+RetiredRoleTitle, Role or job title during retirement, text, Consultant
+RetiredCountryOfWork, Country of work during retirement, text, United Kingdom
+RetiredCountryOfOrganisation, Country of organisation during retirement, text, United Kingdom
+RetiredEmployerName, Name of employer during retirement, text, XYZ Corporation
+RetiredHeadOfficeAddress,Head office address of organisation or employer, text, (Address Here)
+RetiredEmployerPhoneNumber, Employer phone number during retirement, text, +9876543210
+RetiredEmployerEmailAddress, Employer email address during retirement, text, retired@example.com
+
+
+
+,,,,
+MaritalStatus,What is your partnership status? (Single, Married, Partner, Engaged, Separated, Divorced, Widowed),text,Single
+current_partner, is this person your current partner?,text,Yes
+YesOrNo,Do you have any contacts in New Zealand?,text,yes
+ContactFirstName,Contact's first name,text,John
+ContactMiddleNames,Contact's middle names,text,Doe
+ContactSurname,Contact's surname,text,Smith
+RelationshipType,Relationship to you (Family, Friend, Other),text,Family
+ContactDOB,Contact's date of birth (DD/MM/YYYY),text,12/05/1985
+ContactNumber,Contact's phone number,text,+1234567890
+EmailAddress,Contact's email address,text,john@example.com
+AddressContact,Contact's address,text,123 Main Street, Auckland
+
+
+
+,,,,,,,
+IM_yes_or_no_choice,Are you completing this form on behalf of someone else?,text(Yes/No),yes
+IM_capacity_option,In what capacity are you completing this form?,text,Licensed immigration adviser
+IM_first_name,Given or first name,text,John
+IM_surname,Surname or family name,text,Doe
+IM_company_name,Company or organisation name — if applicable,text,ABC Corporation
+IM_country,Country or territory,text,United States
+IM_email,Email,email,johndoe@example.com
+IM_contact_number,Contact number,phone number,+1 123 4567890
+IM_email_correspondence_choice,Do you want to use this email for all correspondence regarding the application?,text(Yes/No),yes
+IM_adviser_number,Provide your adviser number,text,123
+IM_Advice_provided,Have you provided advise?, text(Yes/Non),no
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+,,,
+,,,
+,,,
+
+SCStudentVisa,Are you applying for a student visa?,Yes/No,Yes
+SCCreditCard,Do you have a MasterCard, Visa or UnionPay card to pay for this application?,Yes/No,Yes
+SCGroupApp,Are you applying for a student visa as a dependent child of a New Zealand visa holder or applicant?,Yes/No,No
+SCAustralian,Are you an Australian citizen or permanent resident?,Yes/No,No
+SCRefugee,Have you claimed refugee or protection status in New Zealand?,Yes/No,No
+SCVocationalTrainee,Are you applying under a special Vocational Trainees category?,Yes/No,No
+QFamilyName,Family Name,Text,Doe
+QFirstName,First Name,Text,John
+QMiddleName,Middle Name,Text,Smith
+Qtitle,Title,Select,Mr
+OtherNames-0-QFamilyNameOther,Other Family Name,Text,Doe
+OtherNames-0-QFirstNameOther,Other First Name,Text,John
+OtherNames-0-QMiddleNameOther,Other Middle Name,Text,Smith
+OtherNames-0-NameType,Name Type,Birth/Marriage/English/Preferred/Adoption/Other,Birth
+QGender,Gender,Male/Female,Male
+QDOB_day,Date of Birth (Day),Numeric,4
+QDOB_month,Date of Birth (Month),Text,February
+QDOB_year,Date of Birth (Year),Numeric,1993
+QCountryOfBirth,Country of Birth,Text,New Zealand
+QStateOfBirth,State/Province/Region of Birth,Text,Auckland
+QCityOfBirth,City of Birth,Text,Wellington
+QPassportNbr,Passport Number,Text,AB1234567
+QPassportIssueCountry,Country/Territory of Passport,Text,Australia
+QPassportExpiryDate_day,Passport Expiry Date (Day),Numeric,10
+QPassportExpiryDate_month,Passport Expiry Date (Month),Text,April
+QPassportExpiryDate_year,Passport Expiry Date (Year),Numeric,2025
+QPartnershipStatus,Partnership Status,Single/Married / in civil union/Partner / de facto/Engaged/Separated/Divorced/Widowed,Single
+QAppliedVisaBefore,Have you previously applied for a visa for New Zealand?,Yes/No,No
+QAppCountry,Country of Residential Address,Text,Australia
+QAppAddress1,Residential Address,Text,123 Main Street
+QAppCity,City of Residential Address,Text,Sydney
+ResidentialCountryRegionStateLookupID,State/Province/Region of Residential Address,Text,Victoria
+QAppPostCode,Post Code of Residential Address,Text,1010
+TelephoneLandline_cc,Telephone (Landline) - Country Code,Numeric,123
+TelephoneLandline_ac,Telephone (Landline) - Area Code,Numeric,456
+TelephoneLandline_num,Telephone (Landline) - Number,Numeric,7890
+MobileNumber_cc,Mobile Number - Country Code,Numeric,61
+MobileNumber_num,Mobile Number - Number,Numeric,412345678
+QAppEmailAddr,Email Address,Text,example@example.com
+QConfirmappEmailAddr,Confirm Email Address,Text,example@example.com
+QSameCurrentAddr_1,Is Postal Address the same as Residential Address?,Yes/No,Yes
+QCurrentLocation_1,Is the country of the current location the same as the country of Residential Address?,Yes/No,Yes
+QApplyingForGroup_2,Are you applying as a group?,Yes/No,No
+QDeclaration,Do you agree to the declaration?,Yes/No,Yes
+QPathwayVisa,Applying for Pathway Student Visa,Yes/No,No
+QExchange,Coming as Exchange Student,Yes/No,No
+QExchangeType,Type of exchange,School to school exchange/Tertiary exchange,Tertiary exchange
+QScholarship,Have Scholarship to Study,Yes/No,No
+QScholarshipType,Scholarship Type,New Zealand Aid Programme/Other government supported/Other,Other
+QPleaseSpecify,Please specify other, text, home country
+QScholarshipTypeGovernmentCountry,Scholarship Type (Government) Country,Text,ireland
+QIntendtoEnter_day,Intend to Enter New Zealand (Day),Numeric,29
+QIntendtoEnter_month,Intend to Enter New Zealand (Month),Text,May
+QIntendtoEnter_year,Intend to Enter New Zealand (Year),Numeric,2024
+QTimeinNewZealand,Total Stay Duration,Text/More than 6 months and up to 12 months,6 months or less
+QCourseFeeExempt,Exempt from Programme Fees,Yes/No,No
+QCourseStartDate_day,Start Date (Day),Numeric,15
+QCourseStartDate_month,Start Date (Month),Text,April
+QCourseStartDate_year,Start Date (Year),Numeric,2024
+QCourseFinishDate_day,End Date (Day),Numeric,20
+QCourseFinishDate_month,End Date (Month),Text,December
+QCourseFinishDate_year,End Date (Year),Numeric,2024
+QProgramTypeLabel,Type of study(Undergraduate/Primary/Secondary/Postgraduate excluding PhD/PhD/English Language..),Text,Postgraduate excluding PhD
+QEducationProviderName,Name of the education provider where you will be studying,Text,Auckland University of Technology - Auckland
+QSchoolYear,School Year,Text,Year 09
+Qqualification,Qualification/programme you will be studying,Text,English
+Q120credits,Is your programme of study 120 credits or more in total?,Yes/No,Yes
+Postgraduate_program_name,What subjects are you doing your postgraduate study in?,text,Accountancy
+QHasThirdPartyFinancialUndertaking,A third party (relative, friend or a supporting organisation) is providing a financial undertaking for me,Yes/No,True
+QHasSufficientFunds,I have the required amount of funds to pay for my living costs, according to the visa I am applying for,Yes/No,True
+QAreLivingCostsPaid,My living costs are already paid,Yes/No,False
+QHasFullScholarshipAward,I am fully funded for my study and the duration of my stay in New Zealand by the award of a full scholarship,Yes/No,False
+QHasSponsorship,I have sponsorship for temporary entry by an acceptable sponsor,Yes/No,False
+QPrepurchasedTravel,I have pre-purchased travel,Yes/No,False
+QHasSufficientFundsForTravel,I have sufficient funds to purchase travel,Yes/No,True
+QThirdPartyFinancialUndertakingForTravel,A third party has provided a financial undertaking of guaranteeing my outward travel,Yes/No,False
+,,
+,,
+
+QTB,Do you have tuberculosis (TB)?,Yes/No,No
+QTBDetails, Please specify details,text,yes i have TB
+QRenalDialysis,Renal dialysis,Yes/No,No
+QRenalDialysisDetails, Please specify details,text,yes i have Dialaysis
+QHospitalCare,Hospital care,Yes/No,No
+QHospitalCareDetails, Please specify details,text,yes i have neeed
+QResidentialCare,Residential care,Yes/No,No
+QResidentialCareDetails, Please specify details,text,yes i have care need
+QSpecialEducationServices,Have you been identified as a person who requires special education services?,Yes/No,Yes
+QEducationServiceDetails, Please specify details,text,yes i have eduction issue
+,,
+,,
+Qconvicted,Convicted,Yes/No,No
+QconvictedDetails,Please specify details,text,yes I have been convicted previously.
+QInvestigation,Investigation,Yes/No,No
+QInvestigationDetails,Please specify details,text,I am currently under investigation.
+Qcharges,Charges,Yes/No,No
+QchargesDetails,Please specify details,text,I have been charged with a crime.
+QExcluded,Excluded,Yes/No,No
+QExcludedDetails,Please specify details,text,I have been excluded from certain activities.
+QRefused,Refused,Yes/No,No
+QRefusedDetails,Please specify details,text,I have refused to participate in certain activities.
+QRemoved,Removed,Yes/No,No
+QRemovedDetails,Please specify details,text,I have been removed from certain positions or roles.
+QQuestioning,Questioning,Yes/No,No
+QQuestioningDetails,Please specify details,text,I am currently being questioned by authorities.
+QCurrentlyInvestigated,Currently Investigated,Yes/No,No
+QCurrentlyInvestigatedDetails,Please specify details,text,I am currently under investigation by authorities.
+QCurrentCharges,Current Charges,Yes/No,yes
+QCurrentChargesDetails,Please specify details,text,I am currently facing criminal charges.
+
+,,
+
+
+QEmployeeHistoryRe-0-QNZBusinessNumber,New Zealand Business Number (NZBN),text,
+QEmployeeHistoryRe-0-QEHEmployer2,Company/Organization,text,Telsa
+QEmployeeHistoryRe-0-QTypeWork,Type of Work/Occupation/Job Title,text,Software Engineer
+QEmployeeHistoryRe-0-QEHPartialStartDate,Start Date,text(mm/yyyy),03/2023
+QEmployeeHistoryRe-0-QEHPartialEndDate,End Date,text(mm/yyyy),04/2023
+QEmployeeHistoryRe-0-QEHLocationCountry2,Country/Territory,text,New Zealand
+QEmployeeHistoryRe-0-QEHLocationState2,State/Province/Region,text,Auckland
+QEmployeeHistoryRe-0-QEHLocationTown,Town/City,text,Auckland
+QEmployeeHistoryRe-0-QEHCurrentEmployer2,Current Employer,Yes/No,Yes
+
+,,
+
+
+QNZContacts,Do you have any contacts in New Zealand?,text (Yes/No),Yes
+FamilyName,enter your contact family name,text,Smith
+GivenNames,enter your contact given name,text,Jacob
+RelationshipValue,enter your relationship with contact,text(Other/Friend),Family
+DOBDay,enter contact's date of birth,int,1
+DOBMonth,enter contact's date of birth month,text,April
+DOBYear,enter contact's date of birth year,text,1908
+Address,enter contact's address,text,123 Main Street
+TelephoneCC,enter contact's telephone country code,text,1
+TelephoneAC,enter contact's telephone country Area code,12
+TelephoneNum,enter contact's telephone number,text,555-1234
+MobileTelephoneCC,enter contact's telephone country Area code,12
+MobileTelephoneNum,enter contact's telephone number,text,555-1234
+Email,enter contact's email address,text,jacob@example.com
+
+,,,
+
+,,,
+
+QApplyOnBehalf, Are you completing this form on behalf of someone else?*, text(Yes/No),Yes
+QApplyOnBehalfType, In what capacity are you completing this form, text, Licensed immigration adviser
+QLicenceDetails, What type of licence do you hold?, text, Full
+QLimitedDetails, Provide the conditions of your licence as specified in the register, text,
+QLicenceNumber, Provide your licence number, text,
+QAssistingPersonLastName, Family/last name, text,
+QAssistingPersonFirsttName, Given/first name(s), text,
+QNZBusinessNumber, New Zealand Business Number, text,
+QAssistingPersonCompanyName, Company name (if applicable), text,23
+QAssistingPersonAddress, Address, text,234 street
+QAssistingPersonTelephone_cc, Telephone (landline), text(country code),2345
+QAssistingPersonTelephone_ac,Telephone (landline), text(ac),23456
+QAssistingPersonTelephone_num,Telephone (landline), text(num),23456
+QAssistingPersonMobile_num,Mobile number (num), text,34567
+QAssistingPersonMobile_cc,Mobile number (cc), text,4567
+QAssistingPersonEmail, Email, text,sure@gmail.com
