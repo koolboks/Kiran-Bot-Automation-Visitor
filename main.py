@@ -392,6 +392,11 @@ async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             # # Start a new thread to run the main function
             # main_thread = threading.Thread(target=run_main_thread)
             # main_thread.start()
+        elif data == 'force':
+            new_data["is_launched"] = False
+            save_json(new_data)
+            message = await update.message.reply_text("Cache Clear and Browser Restore !\n\n please use 'Y' to Launch again...",
+                                                      reply_to_message_id=update.message.message_id)
         elif data =="ok":
             new_data["user_confirmed_proceed"] = '3'
             save_json(new_data)
