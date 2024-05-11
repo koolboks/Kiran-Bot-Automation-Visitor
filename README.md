@@ -14,7 +14,7 @@ This is a Visitor bot visa.
 1. Open the folder after unzipping it.
 2. Go straight to `run_script.sh` and click it.
 3. Take a coffee ☕ and relax because it will take longer time if you run for the first time.
-4. After that, you will be directed to the [Telegram bot link for visitors](https://t.me/newBotFillerBot).
+4. After that, you can go to the [Telegram bot link for visitors](https://t.me/newBotFillerBot).
 
 ### Additional Notes
 
