@@ -152,6 +152,7 @@ async def process_callback(update, context):
 
 
         elif data == 'select_browser':
+            await query.answer("Select Browser !")
             keyboard = [
                 [InlineKeyboardButton(text="FireFox", callback_data='firefox')],
                 [InlineKeyboardButton(text="Chrome", callback_data='chrome'),
@@ -167,6 +168,7 @@ async def process_callback(update, context):
 
 
         elif data == "start_form_filling":
+            await query.answer("button Clicked")
 
             is_launched = not is_launched
 
