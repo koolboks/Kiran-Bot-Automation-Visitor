@@ -9,6 +9,11 @@ from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filte
 
 from config import TELEGRAM_TOKEN
 from manage_json import load_json, save_json
+from loguru import logger  as log
+
+
+telegram_bot_link = 'https://t.me/newBotFillerBot'
+
 
 # Initialize the Telegram bot
 API_TOKEN = TELEGRAM_TOKEN
@@ -426,7 +431,10 @@ def check_file_name(file_name):
 def main():
     try:
 
-        print("Lauching Application.....")
+        log.info("Launching Application.........")
+        log.info("Application Launched Successfully\nYou don't have to come here often")
+        print('\n')
+        log.info(f"Please visit : {telegram_bot_link} to start bot")
         application = ApplicationBuilder().token(API_TOKEN).build()
 
         application.add_handler(CommandHandler("start", start))
