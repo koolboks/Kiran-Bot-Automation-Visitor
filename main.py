@@ -48,6 +48,7 @@ is_launched = False
 async def menu(update, context):
     # Load settings from the JSON file
     settings_data = load_json(filename="settings.json")
+    update_data = load_json(filename='update.json')
 
     MANUAL = settings_data.get("MANUAL", False)  # Default value "no" if not found
     ALWAYS_SHOW_PREVIEW = settings_data.get("ALWAYS_SHOW_PREVIEW", "yes")  # Default value "yes" if not found
@@ -59,9 +60,10 @@ async def menu(update, context):
                 f"Manual ✅" if settings_data.get("MANUAL", False) else "Manual ❌",
                 callback_data="toggle_manual"),
             InlineKeyboardButton(
-                "Preview ✅" if settings_data.get("ALWAYS_SHOW_PREVIEW",
-                                                 False) else "Preview ❌",
-                callback_data="toggle_preview"),
+                "Preview ✅" if settings_data.get("ALWAYS_SHOW_PREVIEW", False) else "Preview ❌",
+                callback_data="toggle_preview"), InlineKeyboardButton(
+            "Wizard ✅." if update_data.get("wizard", False) else "Wizard ❌",
+            callback_data="wizard")
         ],
         [InlineKeyboardButton("Select Browser 🌐", callback_data="select_browser")],
         [InlineKeyboardButton("Upload Data 📤", callback_data="upload_data")],
@@ -83,6 +85,7 @@ async def process_callback(update, context):
     data = query.data
 
     settings_data = load_json(filename="settings.json")
+    update_data = load_json(filename='update.json')
 
     try:
 
@@ -99,12 +102,13 @@ async def process_callback(update, context):
             keyboard = [
                 [
                     InlineKeyboardButton(
-                        f"Manual ✅" if settings_data.get("MANUAL",False)  else "Manual ❌",
+                        f"Manual ✅" if settings_data.get("MANUAL", False) else "Manual ❌",
                         callback_data="toggle_manual"),
                     InlineKeyboardButton(
-                        "Preview ✅" if settings_data.get("ALWAYS_SHOW_PREVIEW",
-                                                         False) else "Preview ❌",
-                        callback_data="toggle_preview"),
+                        "Preview ✅" if settings_data.get("ALWAYS_SHOW_PREVIEW", False) else "Preview ❌",
+                        callback_data="toggle_preview"), InlineKeyboardButton(
+                    "Wizard ✅." if update_data.get("wizard", False) else "Wizard ❌",
+                    callback_data="wizard")
                 ],
                 [InlineKeyboardButton("Select Browser 🌐", callback_data="select_browser")],
                 [InlineKeyboardButton("Upload Data 📤", callback_data="upload_data")],
@@ -117,7 +121,42 @@ async def process_callback(update, context):
 
 
 
+        elif data == "wizard":
+            # await query.answer("Wizard button clicked ")
 
+
+            # print("wizard", update_data['wizard'])
+            update_data["wizard"] = not update_data["wizard"]
+            # Save the updated settings to the JSON file
+            save_json(update_data, filename="update.json")
+
+            await query.answer("Wizard Enabled " if update_data['wizard'] else "Wizard  Mode Disabled",
+                               show_alert=False)
+            # Update the inline keyboard buttons with the new settings
+
+            # Update the inline keyboard buttons with the new settings
+            keyboard = [
+                [
+                    InlineKeyboardButton(
+                        f"Manual ✅" if settings_data.get("MANUAL", False) else "Manual ❌",
+                        callback_data="toggle_manual"),
+                    InlineKeyboardButton(
+                        "Preview ✅" if settings_data.get("ALWAYS_SHOW_PREVIEW", False) else "Preview ❌",
+                        callback_data="toggle_preview"),    InlineKeyboardButton(
+                    "Wizard ✅." if update_data.get("wizard", False) else "Wizard ❌",
+                    callback_data="wizard")
+                ],
+                [InlineKeyboardButton("Select Browser 🌐", callback_data="select_browser")],
+                [InlineKeyboardButton("Upload Data 📤", callback_data="upload_data")],
+
+                [InlineKeyboardButton(
+                    "Launch." if settings_data.get("IS_LAUNCHED", False) else "Launch ..",
+                    callback_data="start_form_filling")]
+            ]
+            reply_markup = InlineKeyboardMarkup(keyboard)
+            await query.edit_message_reply_markup(reply_markup=reply_markup)
+            # Save the updated settings to the JSON file
+            save_json(settings_data, filename="settings.json")
 
 
         elif data == "toggle_preview":
@@ -138,8 +177,10 @@ async def process_callback(update, context):
                         f"Manual ✅" if settings_data.get("MANUAL", False) else "Manual ❌",
                         callback_data="toggle_manual"),
                     InlineKeyboardButton(
-                        "Preview ✅" if settings_data.get("ALWAYS_SHOW_PREVIEW",False)  else "Preview ❌",
-                        callback_data="toggle_preview"),
+                        "Preview ✅" if settings_data.get("ALWAYS_SHOW_PREVIEW", False) else "Preview ❌",
+                        callback_data="toggle_preview"), InlineKeyboardButton(
+                    "Wizard ✅." if update_data.get("wizard", False) else "Wizard ❌",
+                    callback_data="wizard")
                 ],
                 [InlineKeyboardButton("Select Browser 🌐", callback_data="select_browser")],
                 [InlineKeyboardButton("Upload Data 📤", callback_data="upload_data")],
@@ -190,9 +231,10 @@ async def process_callback(update, context):
                         f"Manual ✅" if settings_data.get("MANUAL", False) else "Manual ❌",
                         callback_data="toggle_manual"),
                     InlineKeyboardButton(
-                        "Preview ✅" if settings_data.get("ALWAYS_SHOW_PREVIEW",
-                                                         False) else "Preview ❌",
-                        callback_data="toggle_preview"),
+                        "Preview ✅" if settings_data.get("ALWAYS_SHOW_PREVIEW", False) else "Preview ❌",
+                        callback_data="toggle_preview"), InlineKeyboardButton(
+                    "Wizard ✅." if update_data.get("wizard", False) else "Wizard ❌",
+                    callback_data="wizard")
                 ],
                 [InlineKeyboardButton("Select Browser 🌐", callback_data="select_browser")],
                 [InlineKeyboardButton("Upload Data 📤", callback_data="upload_data")],
