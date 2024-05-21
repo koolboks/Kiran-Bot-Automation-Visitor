@@ -8,14 +8,24 @@ import os
 from config import bot_manual_setting, preview
 from manage_json import load_json, save_json
 
+
+
 def transform_data(data):
     transformed_data = {}
     for row in data:
-        if len(row) >= 2:
+        if len(row)>4:
+            row = row[:4]
             transformed_data[row[0]] = row[-1]
+
+        elif len(row)>=2:
+            transformed_data[row[0]] = row[-1]
+
+        # elif len(row) ==4:
+        #     transformed_data[row[0]] = row[-2]
         else:
             print(f"Ignoring row: {row}. Insufficient data.")
     return transformed_data
+
 
 async def delay(seconds=0.5):
     await asyncio.sleep(seconds)
@@ -2171,10 +2181,12 @@ async def main(update=None, bot=None):
             await handle_next_button(page, update, bot)
 
             await bot.message.reply_text(
-                "Thank you i am Done ! please Upload the necessary docs and use CTRL + C to Close me",
+                "Thank you i am Done ! please Upload the necessary docs and use 'stop or s' or  CTRL + C to Close me",
                 reply_to_message_id=bot.message.message_id)
 
-            input("Please Press enter and  CTRL + C")
+            while 1:
+                await asyncio.sleep(2)
+                await browser.close()
 
 
 
