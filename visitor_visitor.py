@@ -13,11 +13,15 @@ from manage_json import load_json, save_json
 def transform_data(data):
     transformed_data = {}
     for row in data:
+        # input('press next ')
+        print(row)
         if len(row)>4:
             row = row[:4]
             transformed_data[row[0]] = row[-1]
 
+
         elif len(row)>=2:
+
             transformed_data[row[0]] = row[-1]
 
         # elif len(row) ==4:
@@ -36,6 +40,8 @@ async def press_enter(page):
 
 
 async def handle_warning(page, bot):
+    await page.wait_for_load_state(state='networkidle')
+
     try:
         # Check if the warning message exists
         warning_inner_text = await page.evaluate('''() => {
@@ -74,8 +80,19 @@ async def handle_warning(page, bot):
                         await page.click('#failcontinueButton')
                         # await page.wait_for_load_state("domcontentloaded")
                         return True
+
                     except:
                         return False
+
+                elif state.get('wizard', False):
+                    await page.click('#failcontinueButton') # If wizard is true dont wait... just click..
+                    await bot.message.reply_text(
+                        "WIZARD: I am moving on !!! 😎 give me some sec ... ",
+                        reply_to_message_id=bot.message.message_id)
+                    await page.wait_for_load_state(state='networkidle')
+                    return True
+
+
 
                 elif state.get("user_confirmed_proceed") == '2':  # click no
                     new_data = {"user_confirmed_proceed": "1"}  # return value to default
@@ -138,6 +155,8 @@ async def login_page(update, page, data, bot=None):
 
 
 async def first_page(update, page, data):
+    # Navigate to the page and wait for it to fully load
+    await page.wait_for_load_state(state='networkidle')
 
     async def navigate_to_visa_application_page():
         await update.edit_text("Navigating to the visa application page...")
@@ -184,6 +203,7 @@ async def first_page(update, page, data):
             await page.click('input[id="4710ca77-136b-eb11-a812-000d3acb9f99_FALSE"]')
 
             purpose_of_visit = data.get("PurposeOfVisit", "covid-19")
+            print("purpose_of_visit", purpose_of_visit)
             if purpose_of_visit.lower() in ["covid-19", "tourism or holiday", "event", "professional", "family", "private yacht or plane", "other"]:
 
                 if purpose_of_visit.lower() == "tourism or holiday":
@@ -219,6 +239,8 @@ async def first_page(update, page, data):
 
 
 async def second_page(update, page, data):
+    # Navigate to the page and wait for it to fully load
+    await page.wait_for_load_state(state='networkidle')
 
     await update.edit_text("Navigating to the second page...")
 
@@ -234,12 +256,15 @@ async def second_page(update, page, data):
 
 
 async def third_page(update, page, data):
+    # Navigate to the page and wait for it to fully load
+    await page.wait_for_load_state(state='networkidle')
 
     async def click_radio_button():
 
         is_mononym = data.get("IsMononym", "")  # get data from csv
 
         if is_mononym.lower() == "yes":
+            await page.wait_for_load_state(timeout=120000)
             await update.edit_text("Clicking 'Yes' for mononym...")
             await page.click('input[id="f40bafb2-b870-eb11-a812-000d3acba81e_TRUE"]')
             # If yes
@@ -987,6 +1012,8 @@ async def third_page(update, page, data):
 
 
 async def fourth_page(page, data):
+    # Navigate to the page and wait for it to fully load
+    await page.wait_for_load_state(state='networkidle')
     # Get the required data
     membership = data.get("membership_with_immigration_nz_tourism_partners")
     financial_support = data.get("financial_support_during_stay")
@@ -1121,22 +1148,41 @@ async def fourth_page(page, data):
         if answer.lower() == "yes":
             await page.evaluate('''document.getElementById("4ecce740-c712-ed11-b83d-00224891e8df_TRUE").click()''')
 
-        elif answer.lower() == "no":
             # Fill in the estimated date of arrival in New Zealand
-            arrival_date = data.get("MJV_arrival_date", "2022-01-01")
+            arrival_date = data.get("MJV_arrival_date", "01-06-2025")
             day, month, year = arrival_date.split('-')
             await page.type('input[name="c8ed1866-dd81-eb11-a812-000d3a6a208d_date_dd"]', day)
             await page.type('input[name="c8ed1866-dd81-eb11-a812-000d3a6a208d_date_mm"]', month)
             await page.type('input[name="c8ed1866-dd81-eb11-a812-000d3a6a208d_date_yy"]', year)
 
             # Fill in the estimated date of departure from New Zealand
-            departure_date = data.get("MJV_departure_date", "2022-12-31")
+            departure_date = data.get("MJV_departure_date", "01-06-2025")
+            day, month, year = departure_date.split('-')
+            await page.type('input[name="b47ea2bb-aec4-eb11-bacc-000d3ad17b60_date_dd"]', day)
+            await page.type('input[name="b47ea2bb-aec4-eb11-bacc-000d3ad17b60_date_mm"]', month)
+            await page.type('input[name="b47ea2bb-aec4-eb11-bacc-000d3ad17b60_date_yy"]', year)
+
+        elif answer.lower() == "no":
+            await page.evaluate('''document.getElementById("4ecce740-c712-ed11-b83d-00224891e8df_FALSE").click()''')
+
+            # Fill in the estimated date of arrival in New Zealand
+            arrival_date = data.get("MJV_arrival_date", "01-06-2025")
+            day, month, year = arrival_date.split('-')
+            await page.type('input[name="c8ed1866-dd81-eb11-a812-000d3a6a208d_date_dd"]', day)
+            await page.type('input[name="c8ed1866-dd81-eb11-a812-000d3a6a208d_date_mm"]', month)
+            await page.type('input[name="c8ed1866-dd81-eb11-a812-000d3a6a208d_date_yy"]', year)
+
+            # Fill in the estimated date of departure from New Zealand
+            departure_date = data.get("MJV_departure_date", "01-06-2025")
             day, month, year = departure_date.split('-')
             await page.type('input[name="7b071dfd-dd81-eb11-a812-000d3a6a208d_date_dd"]', day)
             await page.type('input[name="7b071dfd-dd81-eb11-a812-000d3a6a208d_date_mm"]', month)
             await page.type('input[name="7b071dfd-dd81-eb11-a812-000d3a6a208d_date_yy"]', year)
+
         else:
             print("Invalid answer. Please provide 'yes' or 'no'.")
+
+
 
 
         # Extract the value from data.get
@@ -1248,6 +1294,8 @@ async def fourth_page(page, data):
 #
 
 async def fifth_page(page, data):
+    # Navigate to the page and wait for it to fully load
+    await page.wait_for_load_state(state='networkidle')
 
     async def handle_boolean_radio():
         conviction_value = data.get("Conviction")
@@ -1408,6 +1456,8 @@ async def fifth_page(page, data):
 
 
 async def sixth_page(page, data):
+    # Navigate to the page and wait for it to fully load
+    await page.wait_for_load_state(state='networkidle')
     async def handle_tuberculosis_radio():
         tuberculosis_value = data.get("Tuberculosis")
         if tuberculosis_value:
@@ -1510,6 +1560,8 @@ async def sixth_page(page, data):
 
 
 async def seventh_page(page,data):
+    # Navigate to the page and wait for it to fully load
+    await page.wait_for_load_state(state='networkidle')
     # Get employment status from data
     employment_status = data.get("AreYouCurrentlyWorking")
 
@@ -1662,6 +1714,8 @@ async def seventh_page(page,data):
 
 
 async def Eight_page(page, data):
+    # Navigate to the page and wait for it to fully load
+    await page.wait_for_load_state(state='networkidle')
     async def handle_select(select_id, option_value):
         await page.select_option(f'select[name="{select_id}"]', value=option_value)
 
@@ -1814,6 +1868,8 @@ async def Eight_page(page, data):
 
 
 async def Nineth_page(page, data):
+    # Navigate to the page and wait for it to fully load
+    await page.wait_for_load_state(state='networkidle')
     async def handle_yes_or_no():
         choice = data.get("IM_yes_or_no_choice", "")  # Get the choice from data
         if choice.lower() == "yes":
@@ -2090,9 +2146,9 @@ async def handle_next_button(page, update, bot):
         is_warning = await handle_warning(page, bot)  # handle the warning to proceed
 
         if is_warning:
-            await page.wait_for_load_state("domcontentloaded")
+            await page.wait_for_load_state(state='networkidle')
             print(is_warning, 'is_warning')
-            await delay(12)
+            await delay(15)
             break
         else:
             error_message = await handle_notification_banner(page)
@@ -2132,7 +2188,7 @@ async def main(update=None, bot=None):
             await delay(2)
 
 
-            await page.wait_for_load_state(state="domcontentloaded")
+            await page.wait_for_load_state(state="networkidle")
 
 
 
@@ -2184,9 +2240,17 @@ async def main(update=None, bot=None):
                 "Thank you i am Done ! please Upload the necessary docs and use 'stop or s' or  CTRL + C to Close me",
                 reply_to_message_id=bot.message.message_id)
 
-            while 1:
-                await asyncio.sleep(2)
-                await browser.close()
+
+            await delay(300000)
+            await bot.message.reply_text(
+                "Thank you i am Done ! am shuttung down now goood bye",
+                reply_to_message_id=bot.message.message_id)
+
+            await browser.close()
+
+
+
+            # await browser.close()
 
 
 
