@@ -21,7 +21,7 @@ data = load_json(filename="settings.json")
 
 
 
-if data.get("MANUAL", "no").lower()=="yes":
+if data.get("MANUAL", False):
 
     bot_manual_setting = True
 else:
@@ -30,7 +30,7 @@ else:
 
 
 
-if data.get("ALWAYS_SHOW_PREVIEW", "yes").lower() =="yes":
+if data.get("ALWAYS_SHOW_PREVIEW", False):
     preview = True
 else:
     preview = False
