@@ -10,10 +10,10 @@ VisaType,Selecting the visa type., text (Temporary/Resident),Temporary visa
 IsOutsideNZ,Determine if the applicant is outside New Zealand (Yes/No),text,yes
 OutsideNZVisaType,Select the visa type for applicants outside New Zealand ,text,Visitor
 IsAustralianPRorVisaWaiver,Determine if the applicant is a citizen or permanent resident of Australia or a citizen of a visa waiver country (Yes/No),text,No
-PurposeOfVisit,Determine the purpose of visit from the CSV data and select the corresponding option(covid-19", "tourism or holiday", "event", "professional", "family...),family
+PurposeOfVisit,Determine the purpose of visit from the CSV data and select the corresponding option(covid-19 -tourism or holiday - "event" -"professional"- "family"...),family
 VisitOption,Why you want to visit?(Make sure option is valid),text,To visit family or friends
 IsMononym,Do you have a mononym? (Yes/No),text,Yes
-UserName,Enter your name exactly as it appears in your passport.,text,Mr. John Doe
+UserName,Enter your name exactly as it appears in your passport.,text,Mr John Doe
 GivenName,Enter your Given or first name exactly as it appears in your passport.,text,John
 MiddleName,Enter your Middle names exactly as they appear in your passport. Leave blank if no middle name is displayed in your passport.,text,James
 Surname,Enter your Surname or family name exactly as it appears in your passport.,text,Doe
@@ -28,7 +28,7 @@ PreviousApplication,Have you previously applied for a New Zealand visa?,text,Yes
 ImmigrationCountry,What country or territory will you (the applicant) be in when this application is submitted?,text,Canada
 PreviousVisaNumber,Enter your previous New Zealand visa number,text,23456765
 PreviousNZETARequest,Have you previously requested an NZeTA (New Zealand Electronic Travel Authority)?,text,Yes
-nzeta_PreviousVisaNumber,Enter your previous NZeTA visa number,text,ABC123
+nzeta_PreviousVisaNumber,Enter your previous NZeTA visa number,text,E123456
 AustralianPRVisa,Do you hold an Australian Permanent Resident Visa?,text,Yes
 TraveledToNZ,Have you ever traveled to New Zealand?,text,Yes
 TraveledToNZ_Month,Month of travel to New Zealand,text,01
@@ -83,9 +83,9 @@ accommodation_address,accommodation_address,text,my newzalnd address
 
 
 ,,,,
-Do_you_require_a_multiple_journey_visa,Do_you_require_a_multiple_journey_visa,text(yes/no),No
-MJV_arrival_date,arrival date,date,2025-01-01
-MJV_departure_date,departure date,date,2025-12-31
+Do_you_require_a_multiple_journey_visa,Do_you_require_a_multiple_journey_visa,text(yes/no),yes
+MJV_arrival_date,arrival date,date,01-01-2025
+MJV_departure_date,departure date,date,31-12-2025
 Parental_permission,No one included in this application is under 16,text,No one included in this application is under 16
 
 
@@ -151,13 +151,13 @@ RetiredEmployerEmailAddress, Employer email address during retirement, text, ret
 
 
 ,,,,
-MaritalStatus,What is your partnership status? (Single, Married, Partner, Engaged, Separated, Divorced, Widowed),text,Single
+MaritalStatus,What is your partnership status? (Single- Married - Partner- Engaged- Separated- Divorced- Widowed),text,Single
 current_partner, is this person your current partner?,text,Yes
 YesOrNo,Do you have any contacts in New Zealand?,text,yes
 ContactFirstName,Contact's first name,text,John
 ContactMiddleNames,Contact's middle names,text,Doe
 ContactSurname,Contact's surname,text,Smith
-RelationshipType,Relationship to you (Family, Friend, Other),text,Family
+RelationshipType,Relationship to you (Family - Friend -  Other),text,Family
 ContactDOB,Contact's date of birth (DD/MM/YYYY),text,12/05/1985
 ContactNumber,Contact's phone number,text,+1234567890
 EmailAddress,Contact's email address,text,john@example.com
