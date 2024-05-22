@@ -73,4 +73,4 @@
 
 By following these instructions, you can effectively use the bot's features and ensure the script runs smoothly from start to finish.
 
-Lastly, I recommend first using the WIZARD mode to see how it works effectively!
+Lastly, I recommend first using the WIZARD mode to see how it works effectively! and be modified that Wizard mode is only available on Visitor visa 😎
