@@ -129,7 +129,7 @@ CurrentExamDetails,Please provide more details on your current medical examinati
 
 
 ,,,,,,
-AreYouCurrentlyWorking, Are you currently working (Retired, yes, no), text,Retired
+AreYouCurrentlyWorking, Are you currently working (Retired - yes - no), text,Retired
 StartDate, Your start date of working (mm/yyyy), date, 03/2019
 RoleOrJobTitle, Role or job title, text, Software Engineer
 CountryOfWork, Country of work, text, United States
