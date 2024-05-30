@@ -257,14 +257,15 @@ async def second_page(update, page, data):
 
 async def third_page(update, page, data):
     # Navigate to the page and wait for it to fully load
-    await page.wait_for_load_state(state='networkidle')
+    # await page.wait_for_load_state(state='domcontentloaded')
+    await page.wait_for_load_state(state='networkidle',timeout=120000)
 
     async def click_radio_button():
 
         is_mononym = data.get("IsMononym", "")  # get data from csv
 
         if is_mononym.lower() == "yes":
-            await page.wait_for_load_state(timeout=120000)
+            # await page.wait_for_load_state(timeout=120000)
             await update.edit_text("Clicking 'Yes' for mononym...")
             await page.click('input[id="f40bafb2-b870-eb11-a812-000d3acba81e_TRUE"]')
             # If yes
@@ -922,14 +923,17 @@ async def third_page(update, page, data):
 
             await page.evaluate(script)
 
-    # Call the nested function
-    await click_radio_button()
-    await handle_other_names()
-    await Immigration_history()
+    try:
+        # Call the nested function
+        await click_radio_button()
+        await handle_other_names()
+        await Immigration_history()
 
-    await Passport_and_birth_details()
-    await delay()
-    await handlePoliceCertificates()
+        await Passport_and_birth_details()
+        await delay()
+        await handlePoliceCertificates()
+    except Exception as e:
+        print(e)
 
     await handle_national_identity()
     await delay()
@@ -1013,7 +1017,8 @@ async def third_page(update, page, data):
 
 async def fourth_page(page, data):
     # Navigate to the page and wait for it to fully load
-    await page.wait_for_load_state(state='networkidle')
+    # Navigate to the page and wait for it to fully load
+    await page.wait_for_load_state(state='networkidle', timeout=120000)
     # Get the required data
     membership = data.get("membership_with_immigration_nz_tourism_partners")
     financial_support = data.get("financial_support_during_stay")
@@ -1205,9 +1210,11 @@ async def fourth_page(page, data):
 
 
 
-
-    await finance_support()
-    await multiple_journey_visa()
+    try:
+        await finance_support()
+        await multiple_journey_visa()
+    except Exception as e:
+        print(e)
 
 
 
@@ -1295,7 +1302,7 @@ async def fourth_page(page, data):
 
 async def fifth_page(page, data):
     # Navigate to the page and wait for it to fully load
-    await page.wait_for_load_state(state='networkidle')
+    await page.wait_for_load_state(state='networkidle', timeout=120000)
 
     async def handle_boolean_radio():
         conviction_value = data.get("Conviction")
@@ -1441,23 +1448,26 @@ async def fifth_page(page, data):
                 }''')
 
     # Call the function
-
-    await handle_boolean_radio()
-    await handle_investigation_radio()
-    # Call the function
-    await handle_expulsion_radio()
-    # Call the function
-    await handle_refusal_radio()
-    # Call the function
-    await handle_lived_in_country_radio()
-    await handle_police_certificate_question()
+    try:
+        await handle_boolean_radio()
+        await handle_investigation_radio()
+        # Call the function
+        await handle_expulsion_radio()
+        # Call the function
+        await handle_refusal_radio()
+        # Call the function
+        await handle_lived_in_country_radio()
+        await handle_police_certificate_question()
+    except Exception as e:
+        print(e)
 
 
 
 
 async def sixth_page(page, data):
     # Navigate to the page and wait for it to fully load
-    await page.wait_for_load_state(state='networkidle')
+    # Navigate to the page and wait for it to fully load
+    await page.wait_for_load_state(state='networkidle', timeout=120000)
     async def handle_tuberculosis_radio():
         tuberculosis_value = data.get("Tuberculosis")
         if tuberculosis_value:
@@ -1546,14 +1556,24 @@ async def sixth_page(page, data):
 
 
 
-
-    await handle_tuberculosis_radio()
-    await handle_renal_dialysis_radio()
-    await handle_hospital_care_radio()
-    await handle_residential_care_radio()
-    await handle_stay_duration_dropdown()
-    await handle_previous_medical_examination_radio()
-    await handle_current_medical_examination_radio()
+    try:
+        await handle_tuberculosis_radio()
+        await handle_renal_dialysis_radio()
+        await handle_hospital_care_radio()
+        await handle_residential_care_radio()
+        await handle_stay_duration_dropdown()
+        await handle_previous_medical_examination_radio()
+        await handle_current_medical_examination_radio()
+    except Exception as e:
+        await delay(2)
+        await handle_tuberculosis_radio()
+        await handle_renal_dialysis_radio()
+        await handle_hospital_care_radio()
+        await handle_residential_care_radio()
+        await handle_stay_duration_dropdown()
+        await handle_previous_medical_examination_radio()
+        await handle_current_medical_examination_radio()
+        print(e)
 
 
 ##################
@@ -1561,11 +1581,14 @@ async def sixth_page(page, data):
 
 async def seventh_page(page,data):
     # Navigate to the page and wait for it to fully load
-    await page.wait_for_load_state(state='networkidle')
+    # Navigate to the page and wait for it to fully load
+    await page.wait_for_load_state(state='networkidle', timeout=120000)
+
     # Get employment status from data
     employment_status = data.get("AreYouCurrentlyWorking")
+    # input('wai')
 
-    print(employment_status.strip())
+    print("employment_status.strip():,",employment_status.strip())
 
     # Check if employment status is Yes
     if employment_status.strip().title() == "Yes":
@@ -1635,6 +1658,7 @@ async def seventh_page(page,data):
                                  value="b42b0f55-d698-eb11-b1ac-000d3acbf832")
 
     elif employment_status.strip().title() == "Retired":
+        #9127185b-d698-eb11-b1ac-000d3acbf832
 
         # Select 'Retired' from the dropdown
         await page.select_option('select[name="ac83095f-0d6b-eb11-a812-000d3acb9f99_select"]',
@@ -1715,7 +1739,8 @@ async def seventh_page(page,data):
 
 async def Eight_page(page, data):
     # Navigate to the page and wait for it to fully load
-    await page.wait_for_load_state(state='networkidle')
+    # Navigate to the page and wait for it to fully load
+    await page.wait_for_load_state(state='networkidle', timeout=120000)
     async def handle_select(select_id, option_value):
         await page.select_option(f'select[name="{select_id}"]', value=option_value)
 
@@ -1854,14 +1879,26 @@ async def Eight_page(page, data):
             #     document.getElementById('a5e444ed-fa6e-eb11-a812-000d3acba81e_GRP01021_000_address').value = address;
             # }''', address)
 
-    # Call the function to handle marital status select element
-    await handle_marital_status()
+    try:
+        # Call the function to handle marital status select element
+        await handle_marital_status()
 
-    await handle_current_partner()
-    # Call the function to handle yes or no selection
-    await handle_yes_or_no()
-    # Call the function to handle contact details
-    await handle_contact_details()
+        await handle_current_partner()
+        # Call the function to handle yes or no selection
+        await handle_yes_or_no()
+        # Call the function to handle contact details
+        await handle_contact_details()
+    except Exception as e:
+        print(e)
+        await delay(2)
+        # Call the function to handle marital status select element
+        await handle_marital_status()
+
+        await handle_current_partner()
+        # Call the function to handle yes or no selection
+        await handle_yes_or_no()
+        # Call the function to handle contact details
+        await handle_contact_details()
 
 
 
@@ -1869,7 +1906,8 @@ async def Eight_page(page, data):
 
 async def Nineth_page(page, data):
     # Navigate to the page and wait for it to fully load
-    await page.wait_for_load_state(state='networkidle')
+    # Navigate to the page and wait for it to fully load
+    await page.wait_for_load_state(state='networkidle', timeout=120000)
     async def handle_yes_or_no():
         choice = data.get("IM_yes_or_no_choice", "")  # Get the choice from data
         if choice.lower() == "yes":
@@ -2005,12 +2043,20 @@ async def Nineth_page(page, data):
 
         await page.evaluate(script)
 
+    try:
 
+        # Call handle_yes_or_no and select_capacity functions
+        await handle_yes_or_no()
 
-    # Call handle_yes_or_no and select_capacity functions
-    await handle_yes_or_no()
+        await fill_advice_provided()
 
-    await fill_advice_provided()
+    except Exception as e:
+       print(e)
+       await delay(5)
+       # Call handle_yes_or_no and select_capacity functions
+       await handle_yes_or_no()
+
+       await fill_advice_provided()
 
 
 
@@ -2187,14 +2233,15 @@ async def main(update=None, bot=None):
                 update = recent_message
             await delay(2)
 
-
-            await page.wait_for_load_state(state="networkidle")
+            # Navigate to the page and wait for it to fully load
+            await page.wait_for_load_state(state='networkidle', timeout=120000)
 
 
 
             # -- Next page --- ###
             try:
                 await first_page(update, page, data)
+
             except:
                 pass
 
@@ -2202,38 +2249,75 @@ async def main(update=None, bot=None):
 
 
             ## -- Second page -- ###
+            try:
+                await second_page(update,page,data)
 
-            await second_page(update,page,data)
+            except:
+                await delay(5)
+                await second_page(update, page, data)
 
             ## -- Next page -- #
-            await third_page(update,page,data)
+            try:
+
+                await third_page(update,page,data)
+            except:
+                await delay(5)
+                await third_page(update, page, data)
 
             await handle_next_button(page,update,bot)
 
 
 
             ## -- Next page -- #
-            await fourth_page(page, data)
+            try:
+                await fourth_page(page, data)
+            except:
+                await delay(5)
+                await fourth_page(page, data)
             await handle_next_button(page, update, bot)
 
             ## -- Next page -- #
-            await fifth_page(page,data)
+            try:
+                await fifth_page(page,data)
+            except:
+                await delay(5)
+                await fifth_page(page, data)
+
             await handle_next_button(page, update, bot)
 
             ## -- Next page -- #
-            await sixth_page(page, data)
+            try:
+                await sixth_page(page, data)
+            except:
+                await delay(5)
+                await sixth_page(page, data)
+
             await handle_next_button(page, update, bot)
 
             ## -- Next page -- #
-            await seventh_page(page, data)
+            try:
+
+                await seventh_page(page, data)
+            except:
+                await delay(5)
+
+                await seventh_page(page, data)
+
             await handle_next_button(page, update, bot)
 
             ## -- Next page -- #
-            await Eight_page(page, data)
+            try:
+                await Eight_page(page, data)
+            except:
+                await delay(5)
+                await Eight_page(page, data)
             await handle_next_button(page, update, bot)
 
             ## -- Next page -- #
-            await Nineth_page(page, data)
+            try:
+                await Nineth_page(page, data)
+            except:
+                await Nineth_page(page, data)
             await handle_next_button(page, update, bot)
 
             await bot.message.reply_text(
