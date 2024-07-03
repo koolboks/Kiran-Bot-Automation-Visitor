@@ -1,181 +1,181 @@
-Field Name,Description,Type,Field Value
-QvisaType, what visa are you applying for?, text(Student/visitor),Student
-signInName,Username,Text,sure12@@
-password,Password,Text,F-Uz5-!%Qs4Hi8u
-
-,,,
-,,,
-visitor visa,,
-VisaType,Selecting the visa type., text (Temporary/Resident),Temporary visa
-IsOutsideNZ,Determine if the applicant is outside New Zealand (Yes/No),text,yes
-OutsideNZVisaType,Select the visa type for applicants outside New Zealand ,text,Visitor
-IsAustralianPRorVisaWaiver,Determine if the applicant is a citizen or permanent resident of Australia or a citizen of a visa waiver country (Yes/No),text,No
-PurposeOfVisit,Determine the purpose of visit from the CSV data and select the corresponding option(covid-19 -tourism or holiday - "event" -"professional"- "family"...),family
-VisitOption,Why you want to visit?(Make sure option is valid),text,To visit family or friends
-IsMononym,Do you have a mononym? (Yes/No),text,Yes
-UserName,Enter your name exactly as it appears in your passport.,text,Mr John Doe
-GivenName,Enter your Given or first name exactly as it appears in your passport.,text,John
-MiddleName,Enter your Middle names exactly as they appear in your passport. Leave blank if no middle name is displayed in your passport.,text,James
-Surname,Enter your Surname or family name exactly as it appears in your passport.,text,Doe
-OtherNames,Do you have other names? (Yes/No),text,Yes
-OtherGivenName,Enter your Given or first name exactly as it appears in your passport.,text,John
-OtherMiddleName,Enter your Middle names exactly as they appear in your passport. Leave blank if no middle name is displayed in your passport.,text,James
-OtherSurname,Enter your Surname or family name exactly as it appears in your passport.,text,Doe
-NameType,name type , text,Birth
-
-,,,
-PreviousApplication,Have you previously applied for a New Zealand visa?,text,Yes
-ImmigrationCountry,What country or territory will you (the applicant) be in when this application is submitted?,text,Canada
-PreviousVisaNumber,Enter your previous New Zealand visa number,text,23456765
-PreviousNZETARequest,Have you previously requested an NZeTA (New Zealand Electronic Travel Authority)?,text,Yes
-nzeta_PreviousVisaNumber,Enter your previous NZeTA visa number,text,E123456
-AustralianPRVisa,Do you hold an Australian Permanent Resident Visa?,text,Yes
-TraveledToNZ,Have you ever traveled to New Zealand?,text,Yes
-TraveledToNZ_Month,Month of travel to New Zealand,text,01
-TraveledToNZ_Year,Year of travel to New Zealand,text,2022
-TotalTimeInNZ,Will your total time in New Zealand for all visits including this proposed visit equal 24 months or more?,text,Yes
-
-,,,
-PassportNumber,Passport number,text,Yes
-Nationality,Nationality as shown in passport,text,Canada
-IssueCountry,Country or territory of issue,text,Canada
-ExpiryDate,Passport expiry date,text,02-04-2026
-IssueDate,Passport issue date,text,02-04-2023
-Gender,Sex as shown in passport,text,Male
-DateOfBirth,Date of birth as shown in passport,text,02-04-1993
-CountryOfBirth,CountryOfBirth,text,Canada
-StateProvinceRegionOfBirth,State or province or region of birth,text, Onatario
-CityOfBirth,CityOfBirth,text,Onatario
-
-
-
-OtherCitizenship,OtherCitizenship,text,No
-
-,,
-
-handlePoliceCertificates,Have you provided a police certificate from your country of nationality with a previous visa(yes/no),text,yes
-issue_date,issue_date,date,01-01-2022
-country_of_issue,country_of_issue,text,Canada
-
-,,,,,
-has_national_id,has_national_id,text(yes/no), yes
-national_id_number,national_id_number,number,1234567654
-CountryOfIssue,CountryOfIssue,text, Canada
-
-
-,,,
-CurrentCountry,CurrentCountry,text,Canada
-ContactAddress,ContactAddress,text, Onatario
-PostalSameAsPhysical,PostalSameAsPhysical,text,Yes
-EmailAddress,EmailAddress,text,example@example.com
-PhoneNumber,PhoneNumber,text,+321234567890
-AlternativePhoneNumber,AlternativePhoneNumber,text,+820987654321
-
-
+Field Name,Description,Type,Field Value,
+QvisaType, what visa are you applying for?, text(Student/visitor),Student,
+signInName,Username,Text,sure12@@,
+password,Password,Text,F-Uz5-!%Qs4Hi8u,
+,,,,
+,,,,
+,,,,
+visitor visa,,,,
+VisaType,Selecting the visa type., text (Temporary/Resident),Temporary visa,
+IsOutsideNZ,Determine if the applicant is outside New Zealand (Yes/No),text,yes,
+OutsideNZVisaType,Select the visa type for applicants outside New Zealand ,text,Visitor,
+IsAustralianPRorVisaWaiver,Determine if the applicant is a citizen or permanent resident of Australia or a citizen of a visa waiver country (Yes/No),text,No,
+PurposeOfVisit,"Determine the purpose of visit from the CSV data and select the corresponding option(covid-19 -tourism or holiday - ""event"" -""professional""- ""family""...)",text,family,
+VisitOption,Why you want to visit?(Make sure option is valid),text,To visit family or friends,
+IsMononym,Do you have a mononym? (Yes/No),text,No,
+UserName,Enter your name exactly as it appears in your passport.,text,,
+GivenName,Enter your Given or first name exactly as it appears in your passport.,text,Raghavendran,
+MiddleName,Enter your Middle names exactly as they appear in your passport. Leave blank if no middle name is displayed in your passport.,text,,
+Surname,Enter your Surname or family name exactly as it appears in your passport.,text,Muthuswamy Rajagopal,
+OtherNames,Do you have other names? (Yes/No),text,No,
+OtherGivenName,Enter your Given or first name exactly as it appears in your passport.,text,,
+OtherMiddleName,Enter your Middle names exactly as they appear in your passport. Leave blank if no middle name is displayed in your passport.,text,,
+OtherSurname,Enter your Surname or family name exactly as it appears in your passport.,text,,
+NameType,name type , text,,
+,,,,
+,,,,
+PreviousApplication,Have you previously applied for a New Zealand visa?,text,Yes,
+ImmigrationCountry,What country or territory will you (the applicant) be in when this application is submitted?,text,India,
+PreviousVisaNumber,Enter your previous New Zealand visa number,text,85551242,
+PreviousNZETARequest,Have you previously requested an NZeTA (New Zealand Electronic Travel Authority)?,text,No,
+nzeta_PreviousVisaNumber,Enter your previous NZeTA visa number,text,,
+AustralianPRVisa,Do you hold an Australian Permanent Resident Visa?,text,No,
+TraveledToNZ,Have you ever traveled to New Zealand?,text,No,
+TraveledToNZ_Month,Month of travel to New Zealand,text,,
+TraveledToNZ_Year,Year of travel to New Zealand,text,,
+TotalTimeInNZ,Will your total time in New Zealand for all visits including this proposed visit equal 24 months or more?,text,,
+,,,,
+,,,,
+PassportNumber,Passport number,text,S6233593,
+Nationality,Nationality as shown in passport,text,India,
+IssueCountry,Country or territory of issue,text,India,
+HasLiveInCountry,Have you ever lived or spent time in your passport issue country?,text,yes
+ExpiryDate,Passport expiry date,text,7/08/2028,
+IssueDate,Passport issue date,text,8/08/2018,
+Gender,Sex as shown in passport,text,Male,
+DateOfBirth,Date of birth as shown in passport,text,31/03/1987,
+CountryOfBirth,CountryOfBirth,text,India,
+StateProvinceRegionOfBirth,State or province or region of birth,text,Tamil nadu,
+CityOfBirth,CityOfBirth,text,Madurai,
+,,,,
+,,,,
+,,,,
+OtherCitizenship,OtherCitizenship,text,No,
+,,,,
+,,,,
+,,,,
+handlePoliceCertificates,Have you provided a police certificate from your country of nationality with a previous visa(yes/no),text,,
+issue_date,issue_date,date,,
+country_of_issue,country_of_issue,text,,
+,,,,
+,,,,
+has_national_id,has_national_id,text(yes/no), yes,
+national_id_number,national_id_number,number,12273339,
+CountryOfIssue,CountryOfIssue,text,India,
+,,,,
+,,,,
+,,,,
+CurrentCountry,CurrentCountry,text,India,
+CurrentProvince,State or province or region,text,india
+ContactAddress,ContactAddress,text,"Anirudh BS 01 2nd floor, Vasundhara Complex, Andalpuram, Madurai",
+PostalSameAsPhysical,PostalSameAsPhysical,text,Yes,
+EmailAddress,EmailAddress,text,sriram2426@gmail.com,
+PhoneNumber,PhoneNumber,text,9.19177E+11,
+AlternativePhoneNumber,AlternativePhoneNumber,text,64226242188,
+,,,,
+,,,,
 ,,fourth_page,,
-
-membership_with_immigration_nz_tourism_partners,Membership with Immigration NZ Tourism Partners,boolean,Yes
-financial_support_during_stay,Financial Support during Stay,boolean,No
-prepaid_accommodation,Prepaid Accommodation,boolean,No
-available_funds,Available Funds,boolean,No
-onward_travel_evidence,Onward Travel Evidence,text,I have sufficient funds to purchase travel
-accommodation_address,accommodation_address,text,my newzalnd address
-
-
 ,,,,
-Do_you_require_a_multiple_journey_visa,Do_you_require_a_multiple_journey_visa,text(yes/no),yes
-MJV_arrival_date,arrival date,date,01-01-2025
-MJV_departure_date,departure date,date,31-12-2025
-Parental_permission,No one included in this application is under 16,text,No one included in this application is under 16
-
-
-
-
-,fift page,
-Conviction,Conviction,text(yes/no),yes
-Offence,Offence,text,i ma once convicted of not ok
-ConvictionDetails,convictionDetails,Yes of Course i sined
-UnderInvestigation,UnderInvestigation,text(yes/no),yes
-InvestigationDetails,InvestigationDetails,text,I am currently under investigation for unspecified reasons
-Expulsion,Expulsion,text(yes/no),yes
-ExpulsionDetails,expulsionDetails,text,ok i m not sure
-Refusal,Refusal,text(yes/no),yes
-RefusalCountry,RefusalCountry,text,United Kingdom
-VisaPermitType,VisaPermitType,text,Student Visa
-MonthOfRefusal,MonthOfRefusal,text,05
-YearOfRefusal,YearOfRefusal,text,2023
-Maximum_of_500_characters,Maximum_of_500_characters,text,I was refused entry due to incomplete documentation
-LivedInCountry,LivedInCountry,text(yes/no),yes
-CountryNameHere,CountryNameHere,text,Canada
-PoliceCertificateProvided,PoliceCertificateProvided,text(yes or no),yes
-PoliceCertificateLast24Months,PoliceCertificateLast24Months,text(yes or no),yes
-
+membership_with_immigration_nz_tourism_partners,Membership with Immigration NZ Tourism Partners,boolean,No,
+financial_support_during_stay,Financial Support during Stay,boolean,No,
+prepaid_accommodation,Prepaid Accommodation,boolean,No,
+available_funds,Available Funds,boolean,No,
+onward_travel_evidence,Onward Travel Evidence,text,I have sufficient funds to purchase travel,
+accommodation_address,accommodation_address,text,my newzalnd address,
+,,,,
+,,,,
+,,,,
+Do_you_require_a_multiple_journey_visa,Do_you_require_a_multiple_journey_visa,text(yes/no),No,
+MJV_arrival_date,arrival date,date,,
+MJV_departure_date,departure date,date,,
+Parental_permission,No one included in this application is under 16,text,No one included in this application is under 16,
+,,,,
+,,,,
+,,,,
+,,,,
+,fift page,,,
+Conviction,Conviction,text(yes/no),No,
+Offence,Offence,text,,
+ConvictionDetails,convictionDetails,Yes of Course i sined,,
+UnderInvestigation,UnderInvestigation,text(yes/no),No,
+InvestigationDetails,InvestigationDetails,text,,
+Expulsion,Expulsion,text(yes/no),No,
+ExpulsionDetails,expulsionDetails,text,,
+Refusal,Refusal,text(yes/no),No,
+RefusalCountry,RefusalCountry,text,,
+VisaPermitType,VisaPermitType,text,,
+MonthOfRefusal,MonthOfRefusal,text,,
+YearOfRefusal,YearOfRefusal,text,,
+Maximum_of_500_characters,Maximum_of_500_characters,text,,
+LivedInCountry,LivedInCountry,text(yes/no),yes,
+CountryNameHere,CountryNameHere,text,India,
+PoliceCertificateProvided,PoliceCertificateProvided,text(yes or no),No,
+PoliceCertificateLast24Months,PoliceCertificateLast24Months,text(yes or no),,
+,,,,
 ,sixth,,,
-,,,,,
-Tuberculosis,Do you have tuberculosis?,Yes/No,no
-TuberculosisDetails,Please provide more details on your result,text,i was sick with TB
-RenalDialysis,Have you had renal dialysis?,Yes/No,yes
-RenalDialysisDetails,Please provide more details on your renal dialysis,text,required details here
-HospitalCare,Have you received hospital care?,Yes/No,no
-HospitalCareDetails,Please provide more details on your hospital care,text,required details here
-ResidentialCare,Have you received residential care?,Yes/No,yes
-ResidentialCareDetails,Please provide more details on your residential care,text,required details here
-StayDuration,Duration of stay,Dropdown,1 month or less
-PreviousMedicalExamination,Previous medical examination?,Yes/No,no
-PreviousExamDetails,Please provide more details on your previous medical examination,text,required details here
-CurrentMedicalExamination,Current medical examination?,Yes/No,no
-CurrentExamDetails,Please provide more details on your current medical examination,text,required details here
-
-
-
-,,,,,,
-AreYouCurrentlyWorking, Are you currently working (Retired - yes - no), text,Retired
-StartDate, Your start date of working (mm/yyyy), date, 03/2019
-RoleOrJobTitle, Role or job title, text, Software Engineer
-CountryOfWork, Country of work, text, United States
-CountryOfOrganisation, Country of organisation, text, United States
-CompanyName, Company name, text, ABC Company
-EmployerPhoneNumber, Employer phone number, text, +1234567890
-EmployerEmailAddress, Employer email address, text, example@example.com
-HeadOfficeAddress, Head office address of organisation or employer, text, (Address Here)
-RetiredStartDate, Your start date of retirement (mm/yyyy), date, 05/2023
-RetiredEndDate, Your end date of retirement (mm/yyyy), date, 07/2023
-RetiredRoleTitle, Role or job title during retirement, text, Consultant
-RetiredCountryOfWork, Country of work during retirement, text, United Kingdom
-RetiredCountryOfOrganisation, Country of organisation during retirement, text, United Kingdom
-RetiredEmployerName, Name of employer during retirement, text, XYZ Corporation
-RetiredHeadOfficeAddress,Head office address of organisation or employer, text, (Address Here)
-RetiredEmployerPhoneNumber, Employer phone number during retirement, text, +9876543210
-RetiredEmployerEmailAddress, Employer email address during retirement, text, retired@example.com
-
-
-
 ,,,,
-MaritalStatus,What is your partnership status? (Single- Married - Partner- Engaged- Separated- Divorced- Widowed),text,Single
-current_partner, is this person your current partner?,text,Yes
-YesOrNo,Do you have any contacts in New Zealand?,text,yes
-ContactFirstName,Contact's first name,text,John
-ContactMiddleNames,Contact's middle names,text,Doe
-ContactSurname,Contact's surname,text,Smith
-RelationshipType,Relationship to you (Family - Friend -  Other),text,Family
-ContactDOB,Contact's date of birth (DD/MM/YYYY),text,12/05/1985
-ContactNumber,Contact's phone number,text,+1234567890
-EmailAddress,Contact's email address,text,john@example.com
-AddressContact,Contact's address,text,123 Main Street, Auckland
-
-
-
-,,,,,,,
-IM_yes_or_no_choice,Are you completing this form on behalf of someone else?,text(Yes/No),yes
-IM_capacity_option,In what capacity are you completing this form?,text,Licensed immigration adviser
-IM_first_name,Given or first name,text,John
-IM_surname,Surname or family name,text,Doe
-IM_company_name,Company or organisation name — if applicable,text,ABC Corporation
-IM_country,Country or territory,text,United States
-IM_email,Email,email,johndoe@example.com
-IM_contact_number,Contact number,phone number,+1 123 4567890
-IM_email_correspondence_choice,Do you want to use this email for all correspondence regarding the application?,text(Yes/No),yes
-IM_adviser_number,Provide your adviser number,text,123
-IM_Advice_provided,Have you provided advise?, text(Yes/Non),no
-
-
+Tuberculosis,Do you have tuberculosis?,Yes/No,No,
+TuberculosisDetails,Please provide more details on your result,text,,
+RenalDialysis,Have you had renal dialysis?,Yes/No,No,
+RenalDialysisDetails,Please provide more details on your renal dialysis,text,,
+HospitalCare,Have you received hospital care?,Yes/No,No,
+HospitalCareDetails,Please provide more details on your hospital care,text,,
+ResidentialCare,Have you received residential care?,Yes/No,No,
+ResidentialCareDetails,Please provide more details on your residential care,text,,
+StayDuration,Duration of stay,Dropdown,1 month or less,
+PreviousMedicalExamination,Previous medical examination?,Yes/No,no,
+PreviousExamDetails,Please provide more details on your previous medical examination,text,,
+CurrentMedicalExamination,Current medical examination?,Yes/No,no,
+CurrentExamDetails,Please provide more details on your current medical examination,text,,
+,,,,
+,,,,
+,,,,
+,,,,
+AreYouCurrentlyWorking, Are you currently working (Retired - yes - no), text,No,
+StartDate, Your start date of working (mm/yyyy), date,,
+RoleOrJobTitle, Role or job title, text,,
+CountryOfWork, Country of work, text,,
+CountryOfOrganisation, Country of organisation, text,,
+CompanyName, Company name, text,,
+EmployerPhoneNumber, Employer phone number, text,,
+EmployerEmailAddress, Employer email address, text,,
+HeadOfficeAddress, Head office address of organisation or employer, text,,
+RetiredStartDate, Your start date of retirement (mm/yyyy), date,,
+RetiredEndDate, Your end date of retirement (mm/yyyy), date,,
+RetiredRoleTitle, Role or job title during retirement, text,,
+RetiredCountryOfWork, Country of work during retirement, text,,
+RetiredCountryOfOrganisation, Country of organisation during retirement, text,,
+RetiredEmployerName, Name of employer during retirement, text,,
+RetiredHeadOfficeAddress,Head office address of organisation or employer, text,,
+RetiredEmployerPhoneNumber, Employer phone number during retirement, text,,
+RetiredEmployerEmailAddress, Employer email address during retirement, text,,
+,,,,
+,,,,
+,,,,
+,,,,
+MaritalStatus,What is your partnership status? (Single- Married - Partner- Engaged- Separated- Divorced- Widowed),text,Single,
+current_partner, is this person your current partner?,text,,
+YesOrNo,Do you have any contacts in New Zealand?,text,yes,
+ContactFirstName,Contact's first name,text,Sriram,
+ContactMiddleNames,Contact's middle names,text,,
+ContactSurname,Contact's surname,text,Rajagopal,
+RelationshipType,Relationship to you (Family - Friend -  Other),text,Family,
+ContactDOB,Contact's date of birth (DD/MM/YYYY),text,26/12/1983,
+ContactNumber,Contact's phone number,text,64 22 6242188,
+EmailAddress,Contact's email address,text,sriram2426@gmail.com,
+AddressContact,Contact's address,text,"25 Holystone Road, Whitby, Porirua, Wellington, 5024", Auckland
+,,,,
+,,,,
+,,,,
+,,,,
+IM_yes_or_no_choice,Are you completing this form on behalf of someone else?,text(Yes/No),yes,
+IM_capacity_option,In what capacity are you completing this form?,text,Licensed immigration adviser,
+IM_first_name,Given or first name,text,Kiran,
+IM_surname,Surname or family name,text,Palukuri,
+IM_company_name,Company or organisation name — if applicable,text,Medha Consultants,
+IM_country,Country or territory,text,New Zealand,
+IM_email,Email,email,kiran@medha.co.nz,
+IM_contact_number,Contact number,phone number,64221907014,
+IM_email_correspondence_choice,Do you want to use this email for all correspondence regarding the application?,text(Yes/No),yes,
+IM_adviser_number,Provide your adviser number,text,201500393,
+IM_Advice_provided,Have you provided advise?, text(Yes/Non),Yes,
